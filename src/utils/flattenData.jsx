@@ -1,8 +1,3 @@
-"use client";
-import React from "react";
-import { Table } from "antd";
-
-// Sample data
 const data = [
   {
     _id: "652a7aa6aecce9b3c86c41a7",
@@ -493,7 +488,11 @@ const data = [
                               avg_met: "0.00",
                             },
                             unitsRelated: { token: 0, pdp: 0, cdp: 0 },
-                            affiliatesRelated: { assigned: 0, active: 0, worked: 0 },
+                            affiliatesRelated: {
+                              assigned: 0,
+                              active: 0,
+                              worked: 0,
+                            },
                           },
                           {
                             staffId: "662f6efa0d5e424e8ef3f38e",
@@ -514,7 +513,11 @@ const data = [
                               avg_met: "0.00",
                             },
                             unitsRelated: { token: 0, pdp: 0, cdp: 0 },
-                            affiliatesRelated: { assigned: 0, active: 0, worked: 0 },
+                            affiliatesRelated: {
+                              assigned: 0,
+                              active: 0,
+                              worked: 0,
+                            },
                           },
                           {
                             staffId: "662f6a23dc6324342feaf03380fba6",
@@ -535,7 +538,11 @@ const data = [
                               avg_met: "0.00",
                             },
                             unitsRelated: { token: 0, pdp: 0, cdp: 0 },
-                            affiliatesRelated: { assigned: 0, active: 0, worked: 0 },
+                            affiliatesRelated: {
+                              assigned: 0,
+                              active: 0,
+                              worked: 0,
+                            },
                           },
                           {
                             staffId: "662f6efa2340d5e424e8ef3f38e",
@@ -556,7 +563,11 @@ const data = [
                               avg_met: "0.00",
                             },
                             unitsRelated: { token: 0, pdp: 0, cdp: 0 },
-                            affiliatesRelated: { assigned: 0, active: 0, worked: 0 },
+                            affiliatesRelated: {
+                              assigned: 0,
+                              active: 0,
+                              worked: 0,
+                            },
                           },
                           {
                             staffId: "662f6a23dc6344feaf03380fba6",
@@ -577,7 +588,11 @@ const data = [
                               avg_met: "0.00",
                             },
                             unitsRelated: { token: 0, pdp: 0, cdp: 0 },
-                            affiliatesRelated: { assigned: 0, active: 0, worked: 0 },
+                            affiliatesRelated: {
+                              assigned: 0,
+                              active: 0,
+                              worked: 0,
+                            },
                           },
                           {
                             staffId: "662f6efa04324d5e424e8ef3f38e",
@@ -598,7 +613,11 @@ const data = [
                               avg_met: "0.00",
                             },
                             unitsRelated: { token: 0, pdp: 0, cdp: 0 },
-                            affiliatesRelated: { assigned: 0, active: 0, worked: 0 },
+                            affiliatesRelated: {
+                              assigned: 0,
+                              active: 0,
+                              worked: 0,
+                            },
                           },
                           {
                             staffId: "662f6a23dc6344feaf03380fba6",
@@ -619,7 +638,11 @@ const data = [
                               avg_met: "0.00",
                             },
                             unitsRelated: { token: 0, pdp: 0, cdp: 0 },
-                            affiliatesRelated: { assigned: 0, active: 0, worked: 0 },
+                            affiliatesRelated: {
+                              assigned: 0,
+                              active: 0,
+                              worked: 0,
+                            },
                           },
                           {
                             staffId: "662f6efa0d324435e424e8ef3f38e",
@@ -640,7 +663,11 @@ const data = [
                               avg_met: "0.00",
                             },
                             unitsRelated: { token: 0, pdp: 0, cdp: 0 },
-                            affiliatesRelated: { assigned: 0, active: 0, worked: 0 },
+                            affiliatesRelated: {
+                              assigned: 0,
+                              active: 0,
+                              worked: 0,
+                            },
                           },
                           {
                             staffId: "662f6a23453dc6feaf03380fba6",
@@ -661,7 +688,11 @@ const data = [
                               avg_met: "0.00",
                             },
                             unitsRelated: { token: 0, pdp: 0, cdp: 0 },
-                            affiliatesRelated: { assigned: 0, active: 0, worked: 0 },
+                            affiliatesRelated: {
+                              assigned: 0,
+                              active: 0,
+                              worked: 0,
+                            },
                           },
                           {
                             staffId: "662f6efa0d5e424546e8ef3f38e",
@@ -682,7 +713,11 @@ const data = [
                               avg_met: "0.00",
                             },
                             unitsRelated: { token: 0, pdp: 0, cdp: 0 },
-                            affiliatesRelated: { assigned: 0, active: 0, worked: 0 },
+                            affiliatesRelated: {
+                              assigned: 0,
+                              active: 0,
+                              worked: 0,
+                            },
                           },
                         ],
                       },
@@ -698,8 +733,7 @@ const data = [
   },
 ];
 
-// Flatten data for teams and users
-const flattenData = (data) => {
+export const flattenData = (data) => {
   let teams = [];
   let users = [];
 
@@ -734,457 +768,3 @@ const flattenData = (data) => {
 
   return { teams, users };
 };
-
-const { teams, users } = flattenData(data);
-
-// Define table columns for teams
-const teamColumns = [
-  {
-    title: "Team Name",
-    dataIndex: "team_name",
-    key: "team_name",
-    width: 100,
-    ellipsis: {
-      showTitle: true,
-    },
-  },
-  {
-    title: "Name",
-    width: 100,
-    ellipsis: {
-      showTitle: true,
-    },
-  },
-  {
-    title: "Designation",
-    width: 120,
-    ellipsis: {
-      showTitle: true,
-    },
-  },
-  {
-    title: "Leads Related",
-    ellipsis: {
-      showTitle: true,
-    },
-    children: [
-      {
-        title: "AL",
-        dataIndex: "al",
-        key: "al",
-        ellipsis: {
-          showTitle: true,
-        },
-        width: 65,
-      },
-      {
-        title: "Added",
-        dataIndex: "added",
-        key: "added",
-        ellipsis: {
-          showTitle: true,
-        },
-        width: 65,
-      },
-      {
-        title: "SHL Sale",
-        dataIndex: "shl_sale",
-        key: "shl_sale",
-        ellipsis: {
-          showTitle: true,
-        },
-        width: 65,
-      },
-      {
-        title: "SHL Support",
-        dataIndex: "shl_support",
-        key: "shl_support",
-        ellipsis: {
-          showTitle: true,
-        },
-        width: 65,
-      },
-      {
-        title: "TWL",
-        dataIndex: "twl",
-        key: "twl",
-        ellipsis: {
-          showTitle: true,
-        },
-        width: 65,
-      },
-    ],
-  },
-  {
-    title: "Meetings Related",
-    ellipsis: {
-      showTitle: true,
-    },
-    children: [
-      {
-        title: "Met Done",
-        dataIndex: "met_done",
-        key: "met_done",
-        ellipsis: {
-          showTitle: true,
-        },
-        width: 65,
-      },
-      {
-        title: "Met Confirm",
-        dataIndex: "met_confirm",
-        key: "met_confirm",
-        ellipsis: {
-          showTitle: true,
-        },
-        width: 65,
-      },
-      {
-        title: "Met Push",
-        dataIndex: "met_pushed",
-        key: "met_pushed",
-        ellipsis: {
-          showTitle: true,
-        },
-        width: 65,
-      },
-      {
-        title: "Avg Met",
-        dataIndex: "avg_met",
-        key: "avg_met",
-        ellipsis: {
-          showTitle: true,
-        },
-        width: 65,
-      },
-    ],
-  },
-  {
-    title: "Units Related",
-    width: 100,
-    ellipsis: {
-      showTitle: true,
-    },
-    children: [
-      {
-        title: "Token",
-        dataIndex: "token",
-        key: "token",
-        ellipsis: {
-          showTitle: true,
-        },
-        width: 65,
-      },
-      {
-        title: "PDP",
-        dataIndex: "pdp",
-        key: "pdp",
-        ellipsis: {
-          showTitle: true,
-        },
-        width: 65,
-      },
-      {
-        title: "CDP",
-        dataIndex: "cdp",
-        key: "cdp",
-        ellipsis: {
-          showTitle: true,
-        },
-        width: 65,
-      },
-    ],
-  },
-  {
-    title: "Affiliates Related",
-    width: 100,
-    ellipsis: {
-      showTitle: true,
-    },
-    children: [
-      {
-        title: "Assigned",
-        dataIndex: "assigned",
-        key: "assigned",
-        ellipsis: {
-          showTitle: true,
-        },
-        width: 65,
-      },
-      {
-        title: "Active",
-        dataIndex: "active",
-        key: "active",
-        ellipsis: {
-          showTitle: true,
-        },
-        width: 65,
-      },
-      {
-        title: "Worked",
-        dataIndex: "worked",
-        key: "worked",
-        ellipsis: {
-          showTitle: true,
-        },
-        width: 65,
-      },
-    ],
-  },
-];
-
-// Define table columns for users
-const userColumns = [
-  {
-    title: "",
-    width: 147,
-    dataIndex: "",
-    key: "name",
-    ellipsis: {
-      showTitle: true,
-    },
-  },
-  {
-    title: "Name",
-    dataIndex: "name",
-    key: "name",
-    width: 100,
-    ellipsis: {
-      showTitle: true,
-    },
-  },
-  {
-    title: "Designation",
-    dataIndex: "designation",
-    key: "designation",
-    width: 120,
-    ellipsis: {
-      showTitle: true,
-    },
-  },
-  {
-    title: "Leads Related",
-    ellipsis: {
-      showTitle: true,
-    },
-    children: [
-      {
-        title: "AL",
-        dataIndex: "al",
-        key: "al",
-        ellipsis: {
-          showTitle: true,
-        },
-        width: 65,
-      },
-      {
-        title: "Added",
-        dataIndex: "added",
-        key: "added",
-        ellipsis: {
-          showTitle: true,
-        },
-        width: 65,
-      },
-      {
-        title: "SHL Sale",
-        dataIndex: "shl_sale",
-        key: "shl_sale",
-        ellipsis: {
-          showTitle: true,
-        },
-        width: 65,
-      },
-      {
-        title: "SHL Support",
-        dataIndex: "shl_support",
-        key: "shl_support",
-        ellipsis: {
-          showTitle: true,
-        },
-        width: 65,
-      },
-      {
-        title: "TWL",
-        dataIndex: "twl",
-        key: "twl",
-        ellipsis: {
-          showTitle: true,
-        },
-        width: 65,
-      },
-    ],
-  },
-  {
-    title: "Meetings Related",
-    ellipsis: {
-      showTitle: true,
-    },
-    children: [
-      {
-        title: "Met Done",
-        dataIndex: "met_done",
-        key: "met_done",
-        ellipsis: {
-          showTitle: true,
-        },
-        width: 65,
-      },
-      {
-        title: "Met Confirm",
-        dataIndex: "met_confirm",
-        key: "met_confirm",
-        ellipsis: {
-          showTitle: true,
-        },
-        width: 65,
-      },
-      {
-        title: "Met Push",
-        dataIndex: "met_pushed",
-        key: "met_pushed",
-        ellipsis: {
-          showTitle: true,
-        },
-        width: 65,
-      },
-      {
-        title: "Avg Met",
-        dataIndex: "avg_met",
-        key: "avg_met",
-        ellipsis: {
-          showTitle: true,
-        },
-        width: 65,
-      },
-    ],
-  },
-  {
-    title: "Units Related",
-    ellipsis: {
-      showTitle: true,
-    },
-    children: [
-      {
-        title: "Token",
-        dataIndex: "token",
-        key: "token",
-        ellipsis: {
-          showTitle: true,
-        },
-        width: 65,
-      },
-      {
-        title: "PDP",
-        dataIndex: "pdp",
-        key: "pdp",
-        ellipsis: {
-          showTitle: true,
-        },
-        width: 65,
-      },
-      {
-        title: "CDP",
-        dataIndex: "cdp",
-        key: "cdp",
-        ellipsis: {
-          showTitle: true,
-        },
-        width: 65,
-      },
-    ],
-  },
-  {
-    title: "Affiliates Related",
-    ellipsis: {
-      showTitle: true,
-    },
-    children: [
-      {
-        title: "Assigned",
-        dataIndex: "assigned",
-        key: "assigned",
-        ellipsis: {
-          showTitle: true,
-        },
-        width: 65,
-      },
-      {
-        title: "Active",
-        dataIndex: "active",
-        key: "active",
-        ellipsis: {
-          showTitle: true,
-        },
-        width: 65,
-      },
-      {
-        title: "Worked",
-        dataIndex: "worked",
-        key: "worked",
-        ellipsis: {
-          showTitle: true,
-        },
-        width: 65,
-      },
-    ],
-  },
-];
-
-// Team Table Component
-const TeamTable = () => {
-  const expandedRowRender = (record) => {
-    // Check if it's a team or staff
-    const nestedTeams = teams.filter((team) => team.parentKey === record.key);
-    const nestedUsers = users.filter((user) => user.parentKey === record.key);
-
-    return (
-      <div>
-        {nestedUsers.length > 0 && (
-          <Table
-            columns={userColumns}
-            dataSource={nestedUsers}
-            pagination={false}
-            showHeader={false}
-            bordered
-            // style={{ marginBottom: 8 }}
-          />
-        )}
-        {nestedTeams.length > 0 && (
-          <Table
-            columns={teamColumns}
-            dataSource={nestedTeams}
-            expandable={{
-              expandedRowRender: expandedRowRender,
-              rowExpandable: (nestedRecord) =>
-                users.some((user) => user.parentKey === nestedRecord.key) ||
-                teams.some((team) => team.parentKey === nestedRecord.key),
-            }}
-            pagination={false}
-            showHeader={false}
-          />
-        )}
-      </div>
-    );
-  };
-
-  return (
-    <Table
-      columns={teamColumns}
-      dataSource={teams.filter((team) => !team.parentKey)} // Only top-level teams
-      expandable={{
-        expandedRowRender: expandedRowRender,
-        rowExpandable: (record) =>
-          users.some((user) => user.parentKey === record.key) ||
-          teams.some((team) => team.parentKey === record.key),
-      }}
-    />
-  );
-};
-
-// Main App component
-const App = () => {
-  return <TeamTable />;
-};
-
-export default App;
