@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { Table } from "antd";
+import { Table, Watermark } from "antd";
 
 // Sample data
 const data = [
@@ -493,7 +493,11 @@ const data = [
                               avg_met: "0.00",
                             },
                             unitsRelated: { token: 0, pdp: 0, cdp: 0 },
-                            affiliatesRelated: { assigned: 0, active: 0, worked: 0 },
+                            affiliatesRelated: {
+                              assigned: 0,
+                              active: 0,
+                              worked: 0,
+                            },
                           },
                           {
                             staffId: "662f6efa0d5e424e8ef3f38e",
@@ -514,7 +518,11 @@ const data = [
                               avg_met: "0.00",
                             },
                             unitsRelated: { token: 0, pdp: 0, cdp: 0 },
-                            affiliatesRelated: { assigned: 0, active: 0, worked: 0 },
+                            affiliatesRelated: {
+                              assigned: 0,
+                              active: 0,
+                              worked: 0,
+                            },
                           },
                           {
                             staffId: "662f6a23dc6324342feaf03380fba6",
@@ -535,7 +543,11 @@ const data = [
                               avg_met: "0.00",
                             },
                             unitsRelated: { token: 0, pdp: 0, cdp: 0 },
-                            affiliatesRelated: { assigned: 0, active: 0, worked: 0 },
+                            affiliatesRelated: {
+                              assigned: 0,
+                              active: 0,
+                              worked: 0,
+                            },
                           },
                           {
                             staffId: "662f6efa2340d5e424e8ef3f38e",
@@ -556,7 +568,11 @@ const data = [
                               avg_met: "0.00",
                             },
                             unitsRelated: { token: 0, pdp: 0, cdp: 0 },
-                            affiliatesRelated: { assigned: 0, active: 0, worked: 0 },
+                            affiliatesRelated: {
+                              assigned: 0,
+                              active: 0,
+                              worked: 0,
+                            },
                           },
                           {
                             staffId: "662f6a23dc6344feaf03380fba6",
@@ -577,7 +593,11 @@ const data = [
                               avg_met: "0.00",
                             },
                             unitsRelated: { token: 0, pdp: 0, cdp: 0 },
-                            affiliatesRelated: { assigned: 0, active: 0, worked: 0 },
+                            affiliatesRelated: {
+                              assigned: 0,
+                              active: 0,
+                              worked: 0,
+                            },
                           },
                           {
                             staffId: "662f6efa04324d5e424e8ef3f38e",
@@ -598,7 +618,11 @@ const data = [
                               avg_met: "0.00",
                             },
                             unitsRelated: { token: 0, pdp: 0, cdp: 0 },
-                            affiliatesRelated: { assigned: 0, active: 0, worked: 0 },
+                            affiliatesRelated: {
+                              assigned: 0,
+                              active: 0,
+                              worked: 0,
+                            },
                           },
                           {
                             staffId: "662f6a23dc6344feaf03380fba6",
@@ -619,7 +643,11 @@ const data = [
                               avg_met: "0.00",
                             },
                             unitsRelated: { token: 0, pdp: 0, cdp: 0 },
-                            affiliatesRelated: { assigned: 0, active: 0, worked: 0 },
+                            affiliatesRelated: {
+                              assigned: 0,
+                              active: 0,
+                              worked: 0,
+                            },
                           },
                           {
                             staffId: "662f6efa0d324435e424e8ef3f38e",
@@ -640,7 +668,11 @@ const data = [
                               avg_met: "0.00",
                             },
                             unitsRelated: { token: 0, pdp: 0, cdp: 0 },
-                            affiliatesRelated: { assigned: 0, active: 0, worked: 0 },
+                            affiliatesRelated: {
+                              assigned: 0,
+                              active: 0,
+                              worked: 0,
+                            },
                           },
                           {
                             staffId: "662f6a23453dc6feaf03380fba6",
@@ -661,7 +693,11 @@ const data = [
                               avg_met: "0.00",
                             },
                             unitsRelated: { token: 0, pdp: 0, cdp: 0 },
-                            affiliatesRelated: { assigned: 0, active: 0, worked: 0 },
+                            affiliatesRelated: {
+                              assigned: 0,
+                              active: 0,
+                              worked: 0,
+                            },
                           },
                           {
                             staffId: "662f6efa0d5e424546e8ef3f38e",
@@ -682,7 +718,11 @@ const data = [
                               avg_met: "0.00",
                             },
                             unitsRelated: { token: 0, pdp: 0, cdp: 0 },
-                            affiliatesRelated: { assigned: 0, active: 0, worked: 0 },
+                            affiliatesRelated: {
+                              assigned: 0,
+                              active: 0,
+                              worked: 0,
+                            },
                           },
                         ],
                       },
@@ -1169,16 +1209,20 @@ const TeamTable = () => {
   };
 
   return (
-    <Table
-      columns={teamColumns}
-      dataSource={teams.filter((team) => !team.parentKey)} // Only top-level teams
-      expandable={{
-        expandedRowRender: expandedRowRender,
-        rowExpandable: (record) =>
-          users.some((user) => user.parentKey === record.key) ||
-          teams.some((team) => team.parentKey === record.key),
-      }}
-    />
+    <>
+      <Watermark content="Noman Ansari">
+        <Table
+          columns={teamColumns}
+          dataSource={teams.filter((team) => !team.parentKey)} // Only top-level teams
+          expandable={{
+            expandedRowRender: expandedRowRender,
+            rowExpandable: (record) =>
+              users.some((user) => user.parentKey === record.key) ||
+              teams.some((team) => team.parentKey === record.key),
+          }}
+        />
+      </Watermark>
+    </>
   );
 };
 
